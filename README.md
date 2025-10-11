@@ -6,11 +6,10 @@
 [![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/mdayonmia1804128/misogyny-meme-dataset)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20_Dataset-pltops/BANMIME-ff5733?color=ff5733&logoColor=white)](https://huggingface.co/datasets/pltops/banmime)
 
-<!--
-[![Poster](https://img.shields.io/badge/Poster-EF3939?style=flat&logo=airplayvideo&logoColor=white&color=gray&labelColor=00877a)](link_to_poster)
-[![Slides](https://img.shields.io/badge/Slides-EF3939?style=flat&logo=googleslides&logoColor=white&color=gray&labelColor=B7472A)](link_to_slides)
-[![Video](https://img.shields.io/badge/Video-4285F4?style=flat&logo=youtube&logoColor=white)](link_to_video)
--->
+[![Poster](https://img.shields.io/badge/Poster-EF3939?style=flat&logo=airplayvideo&logoColor=white&color=gray&labelColor=00877a)](https://drive.google.com/file/d/1bEy_qUly4cVKraFS4L0tK7euSiKDRYC_/view?usp=sharing)
+[![Slides](https://img.shields.io/badge/Slides-EF3939?style=flat&logo=googleslides&logoColor=white&color=gray&labelColor=B7472A)](https://drive.google.com/file/d/1BJJhhgw_haPeKR6YXBehmqIYUbTUm4lp/view?usp=sharing)
+[![Video](https://img.shields.io/badge/Video-4285F4?style=flat&logo=youtube&logoColor=white)](https://drive.google.com/file/d/1ghV5UhbDFC1wpFJgUDpwYQXXUBTkXfQ5/view?usp=sharing)
+
 
 
 
@@ -28,9 +27,9 @@
 
 
 ## Dataset Overview
-- Misogyny detection (binary) and category identification (multi-class) dataset on 2,000 Bangla meme samples.
+- The dataset focuses on misogyny category identification and explanation generation in Bangla memes.
+-It contains 2,000 annotated meme samples collected from Facebook (1,300), Instagram (450), and Reddit (250) between 2020–2024.
 - Four misogyny categories: Stereotype (30.6%), Objectification (25.9%), Shaming (38.0%), and Violence (5.4%).
-- Sourced from 3 social media platforms: Facebook (1,300), Instagram (450), and Reddit (250).
 - Each sample includes misogyny labels, humor types, metaphor localization, and detailed human-written explanations.
 - High inter-annotator agreement with Cohen's κ = 0.74.
 
@@ -38,7 +37,6 @@
 
 | **Column Title**       | **Description**                                                                 |
 |-------------------------|---------------------------------------------------------------------------------|
-| `meme_id`              | Unique identifier for each meme entry.                                          |
 | `image_path`           | Path to the meme image file.                                                    |
 | `text_content`         | Extracted text content from the meme.                                           |
 | `misogyny_label`       | Primary misogyny category (Stereotype / Objectification / Shaming / Violence).  |
@@ -59,7 +57,7 @@ To run the code, please check the scripts in the `Misogyny_Code/Evaluate` and `M
 We evaluate baselines using both open-source and closed-source vision-language models across different prompting strategies and fine-tuning approaches.
 
 ### Zero-Shot Prompt
-| Models                | Sham  | Stereo | Obj   | Vio   | Avg   | BScore | LAVE  | Avg Expl |
+| Models                | Sham  | Stereo | Obj   | Vio   | Avg   | BScore | LAVE  | Avg |
 |------------------------|-------|--------|-------|-------|-------|--------|-------|----------|
 | **Closed Source VLMs** |       |        |       |       |       |        |       |          |
 | Gemini2.0 Flash        | 34.97 | 52.55  | 65.77 | 72.41 | 56.43 | 86.70  | 35.00 | 60.85    |
@@ -74,7 +72,7 @@ We evaluate baselines using both open-source and closed-source vision-language m
 | LLaVA-NeXT 7B          | 29.59 | 25.68  | 16.53 | 16.67 | 22.12 | 79.25  | 0.45  | 39.85    |
 
 ### CoT Prompt
-| Models                | Sham  | Stereo | Obj   | Vio   | Avg   | BScore | LAVE  | Avg Expl |
+| Models                | Sham  | Stereo | Obj   | Vio   | Avg   | BScore | LAVE  | Avg|
 |------------------------|-------|--------|-------|-------|-------|--------|-------|----------|
 | **Closed Source VLMs** |       |        |       |       |       |        |       |          |
 | Gemini2.0 Flash        | 48.11 | 64.23  | 47.75 | 55.17 | 53.82 | 86.96  | 31.60 | 59.28    |
@@ -88,7 +86,7 @@ We evaluate baselines using both open-source and closed-source vision-language m
 | LLaVA-NeXT 7B          | 8.67  | 43.62  | 11.57 | 6.45  | 17.58 | 84.23  | 2.16  | 43.20    |
 
 ### LoRA (CoT) Fine-Tuning
-| Models         | Sham  | Stereo | Obj   | Vio   | Avg   | BScore | LAVE  | Avg Expl |
+| Models         | Sham  | Stereo | Obj   | Vio   | Avg   | BScore | LAVE  | Avg      |
 |----------------|-------|--------|-------|-------|-------|--------|-------|----------|
 | Llama-3.2V 11B | 32.83 | 65.33  | 52.89 | 48.39 | 49.86 | 86.01  | 8.00  | 47.01    |
 | Gemma-3-12B    | 16.16 | 76.67  | 49.59 | 64.52 | 51.74 | 86.16  | 13.80 | 49.98    |
